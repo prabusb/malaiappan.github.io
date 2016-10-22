@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    padding: 10px;
+  }
+  nav{ background-color:#fff; border-bottom:1px solid #00a1de;}
+  footer.page-footer{background-color:#00a1de; }
+
+
+
+.btn, .btn-large{
+	background-color:#f19858;
+}
+.btn:hover, .btn-large:hover{ background-color:#00a1de; }
