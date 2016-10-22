@@ -56,11 +56,11 @@ getData = function() {
           response.json().then(function updateFromCache(json) {
 			  console.log("from cache" + json)
 		  console.log("cache size" + json.length)
-			 var html = "<tbody>";
+			 var html = "<table  class=\"striped\" ><thead><tr><th data-field=\"id\">From</th><th data-field=\"name\">To</th><th data-field=\"price\">Date</th><th data-field=\"price\">Time</th><th data-field=\"price\">Price</th><th></th></tr></thead><tbody>";
 			 for(var i = 0, l = json.length; i < l; i++) {
 				html = html + "<tr><td>" + json[i].departureSation.stationCode + "</td><td>" + json[i].arrivalStation.stationCode + "</td><td>" + json[i].departureDate + "</td><td>" + json[i].departureTime + "</td><td>" + json[i].price.currency + " " + json[i].price.price + "</td><td> <a  id=\"btnmod\" class=\"waves-effect waves-light btn\">Book</a></td>";
 			 }
-			 document.getElementById("flightinfo").innerHTML = html + "</tbody>"
+			 document.getElementById("flightinfo").innerHTML = html + "</tbody></table>"
 			 console.log("filled from cache")
 			  return;
           });
@@ -76,12 +76,11 @@ getData = function() {
 		  console.log("from request" + response)
 		  console.log("size from network" + response.length)
 		  
-		/*console.log("size from network" + response.flights.length)
-			 var html = "";
-			 for(var i = 0, l = response.flights.length; i < l; i++) {
-				html = html + "<p>" + response.flights[i].flightNumber + "</p>";
+		var html = "<table  class=\"striped\" ><thead><tr><th data-field=\"id\">From</th><th data-field=\"name\">To</th><th data-field=\"price\">Date</th><th data-field=\"price\">Time</th><th data-field=\"price\">Price</th><th></th></tr></thead><tbody>";
+			 for(var i = 0, l = json.length; i < l; i++) {
+				html = html + "<tr><td>" + json[i].departureSation.stationCode + "</td><td>" + json[i].arrivalStation.stationCode + "</td><td>" + json[i].departureDate + "</td><td>" + json[i].departureTime + "</td><td>" + json[i].price.currency + " " + json[i].price.price + "</td><td> <a  id=\"btnmod\" class=\"waves-effect waves-light btn\">Book</a></td>";
 			 }
-			 document.getElementById("flightNumber").innerHTML = html*/
+			 document.getElementById("flightinfo").innerHTML = html + "</tbody></table>"
 			 console.log("filled from network")
         }
       } else {
