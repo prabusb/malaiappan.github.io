@@ -12,10 +12,10 @@ document.getElementById("viewoffers").addEventListener('click', function() {
   });
   
   
-document.getElementById("mySearch").addEventListener('click', function() {
+/*document.getElementById("mySearch").addEventListener('click', function() {
     // Open/show the add new city dialog
     showMySearches();
-  });
+  });*/
   
 showMySearches = function() {
 	  var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
