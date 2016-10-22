@@ -58,7 +58,7 @@ getData = function() {
 		  console.log("cache size" + json.length)
 			 var html = "<tbody>";
 			 for(var i = 0, l = json.length; i < l; i++) {
-				html = html + "<tr><td>" + json[i].departureSation.stationCode + "</td><td>" + json[i].arrivalStation.stationCode + "</td><td>" + json[i].departureDate + "</td><td>" + json[i].departureTime + "</td><td>" + json[i].price.currency json[i].price.price + "</td><td> <a  id=\"btnmod\" class=\"waves-effect waves-light btn\">Book</a></td>";
+				html = html + "<tr><td>" + json[i].departureSation.stationCode + "</td><td>" + json[i].arrivalStation.stationCode + "</td><td>" + json[i].departureDate + "</td><td>" + json[i].departureTime + "</td><td>" + json[i].price.currency + " " + json[i].price.price + "</td><td> <a  id=\"btnmod\" class=\"waves-effect waves-light btn\">Book</a></td>";
 			 }
 			 document.getElementById("flightinfo").innerHTML = html + "</tbody>"
 			 console.log("filled from cache")
