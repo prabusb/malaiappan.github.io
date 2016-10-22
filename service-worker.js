@@ -50,7 +50,7 @@ self.addEventListener('activate', function(e) {
 //Adding `fetch` event listener
 self.addEventListener('fetch', function(e) {
   console.log('[Service Worker] Fetch', e.request.url);
-  var dataUrl = '/findForRoute';
+  var dataUrl = 'flightmock';
   if (e.request.url.indexOf(dataUrl) > -1) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh
