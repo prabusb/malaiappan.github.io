@@ -3,7 +3,6 @@ var dataCacheName = 'data';
 
 var filesToCache = [
   '/',
-  '/html',
   '/static/js/app.js'
 ];
 
