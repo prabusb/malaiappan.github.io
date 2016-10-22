@@ -1,0 +1,24 @@
+{
+  "name": "Test from Malai",
+  "short_name": "Test from Malai",
+  "icons": [
+    {
+      "src": "static/images/logo.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "static/images/logo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "static/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
