@@ -6,7 +6,7 @@
        .then(function() { console.log('Service Worker Registered'); });
   }
   
-document.getElementById("button").addEventListener('click', function() {
+document.getElementById("viewoffers").addEventListener('click', function() {
     // Open/show the add new city dialog
     getData();
   });
@@ -17,7 +17,7 @@ document.getElementById("mySearch").addEventListener('click', function() {
     showMySearches();
   });
   
-  showMySearches = function() {
+showMySearches = function() {
 	  var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
 	  console.log(searchedRoutes)
 	  var html = "";
@@ -27,17 +27,19 @@ document.getElementById("mySearch").addEventListener('click', function() {
 			//html = html + "<a href=\"http://localhost:3001/\">asdf</a>"
 	  }
 	  document.getElementById("searchList").innerHTML = html
-  }
+}
   
-  saveSearches = function() {
+saveSearches = function() {
     var searchedRoutes = JSON.stringify(searches);
     localStorage.searchedRoutes = searchedRoutes;
-  };
+};
   
 getData = function() {
 	var from = document.getElementById("from").value;
 	var to = document.getElementById("to").value;
-    var url = 'http://localhost:3001/findForRoute?from=' + from + '&to=' + to;
+	var date = document.getElementById("date").value;
+	
+    var url = 'https://flightmock.scalingo.io/flights/' + from + '/' + to + '/' + date;
 	
 	searches.push({"from":from, "to":to, "url":url})
 	saveSearches();
@@ -53,12 +55,13 @@ getData = function() {
         if (response) {
           response.json().then(function updateFromCache(json) {
 			  console.log("from cache" + json)
-			 console.log("cache size" + json.flights.length)
+		  console.log("cache size" + json.length)
+			/* console.log("cache size" + json.flights.length)
 			 var html = "";
 			 for(var i = 0, l = json.flights.length; i < l; i++) {
 				html = html + "<p>" + json.flights[i].flightNumber + "</p>";
 			 }
-			 document.getElementById("flightNumber").innerHTML = html
+			 document.getElementById("flightNumber").innerHTML = html */
 			 console.log("filled from cache")
 			  return;
           });
@@ -72,13 +75,14 @@ getData = function() {
         if (request.status === 200) {
           var response = JSON.parse(request.response);
 		  console.log("from request" + response)
+		  console.log("size from network" + response.length)
 		  
-		   console.log("size from network" + response.flights.length)
+		/*console.log("size from network" + response.flights.length)
 			 var html = "";
 			 for(var i = 0, l = response.flights.length; i < l; i++) {
 				html = html + "<p>" + response.flights[i].flightNumber + "</p>";
 			 }
-			 document.getElementById("flightNumber").innerHTML = html
+			 document.getElementById("flightNumber").innerHTML = html*/
 			 console.log("filled from network")
         }
       } else {
