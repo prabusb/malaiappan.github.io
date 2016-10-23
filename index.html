@@ -138,14 +138,19 @@
          <script src="/static/js/app.js" async></script>
       <script type="text/javascript">
       $( document ).ready(function(){
-      $(".button-collapse").sideNav();
- var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
-	  console.log(searchedRoutes)
-      setTimeout(function() {
-       $('#preload-div').hide();
-        $('#home').show("fadeIn");
+        $(".button-collapse").sideNav();
+         var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
+	 console.log(searchedRoutes)
+	  if (searchedRoutes.length > 0) {
+		  getDataFromLocalStorage();
+		  return;
+	  }
+	      
+        setTimeout(function() {
+         $('#preload-div').hide();
+          $('#home').show("fadeIn");
         
-    }, 2000);
+        }, 2000);
 
           $( "#viewoffers" ).click(function() {
             $('#home').hide("fadeOut");
