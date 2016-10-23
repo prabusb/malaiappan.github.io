@@ -10,6 +10,10 @@ document.getElementById("viewoffers").addEventListener('click', function() {
     getDataOnSubmit();
   });
   
+document.getElementById("bookButton_0").addEventListener('click', function() {
+  	$('#flightinfo').hide("fadeOut");
+          	$('#passengerinfo').show('fadeIn');
+  });
   
 document.getElementById("viewRecentSearch").addEventListener('click', function() {
     // Open/show the add new city dialog
