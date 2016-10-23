@@ -25,13 +25,15 @@
 	    
   <ul id="slide-out" class="side-nav">
     <li><a class="subheader">Booking Menu</a></li>
+	   <li><a id="backtosearch" class="waves-effect">Book for new travel</a></li>
 	  <li><a id="viewRecentSearch" class="waves-effect">My recent searches</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Checkin Menu</a></li>
+	  <li><a id="myBookings" class="waves-effect">My Bookings</a></li>
 	   <li><a class="waves-effect">Checkin for flights</a></li>
     <li><div class="divider"></div></li>
      <li><a class="subheader">Ready for travel</a></li>
-	   <li><a class="waves-effect">Boarding passes</a></li>
+	   <li><a id="boardingPass" class="waves-effect">Boarding passes</a></li>
   </ul>
   <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 	    
@@ -82,11 +84,7 @@
         
         </div>
               <a class="waves-effect waves-light btn" id="viewoffers"> View Offers <i class="material-icons right">send</i></a>
-                 
-               <a class="waves-effect waves-light btn" id="viewRecentSearch" style="float:right; display: none;"> View Recent Searches
-                <i class="material-icons right">send</i>
-              </a> 
-
+               
               </div>
         
       </div> <!-- Home End -->
@@ -271,7 +269,6 @@
             $('#flightinfo').hide("fadeOut");
 	    $('#backtosearchdiv').hide('fadeOut');  
             $('#home').show('fadeIn');
-	    $('#viewRecentSearch').show('fadeIn');  
           });
 
 	  $( "#viewRecentSearch" ).click(function() {
@@ -297,12 +294,17 @@
           $('#passengerinfo').hide("fadeOut");
           $('#confirmation').show('fadeIn');
           });
+	      
+	 $( "#boardingPass" ).click(function() { 
+           $('.button-collapse').sideNav('hide');
+            $('#confirmation').show('fadeIn');
+         });
           
-           $( "#done" ).click(function() {
+         $( "#done" ).click(function() {
           $('#confirmation').hide("fadeOut");
           $('#home').show('fadeIn');
-               $('.modal-trigger').closeModal();
-          });
+          $('.modal-trigger').closeModal();
+        });
 
       });
 	      
