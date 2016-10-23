@@ -114,7 +114,40 @@
           <a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
                 <i class="material-icons right">mode_edit</i>
               </a>
+		<a class="waves-effect waves-light btn" id="viewRecentSearch" style="float:right;"> View Recent Searches
+			<i class="material-icons right">send</i>
+		</a>
         </div>
+	      
+	<div id="recentSearches" style="display: none;">
+        <table  class="striped" >
+        <thead>
+          <tr>
+              <th data-field="id">From</th>
+              <th data-field="name">To</th>
+              <th data-field="price">Date</th>
+              <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AMS</td>
+            <td>MAD</td>
+            <td>22 OCT</td>
+            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons right">replay</i></a></td>
+          </tr>
+            <tr>
+            <td>AMS</td>
+            <td>MAD</td>
+            <td>22 OCT</td>
+            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons right">replay</i></a></td>
+          </tr>
+        </tbody>
+      </table> 
+		<a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
+                <i class="material-icons right">mode_edit</i>
+              </a>
+      </div> <!--recent searches-->
       </main>
 
       
@@ -171,6 +204,11 @@
             $('#home').show('fadeIn');
           });
 
+	  $( "#viewRecentSearch" ).click(function() {
+            $('#home').hide("fadeOut");
+            $('#recentSearches').show('fadeIn');
+            $('#backtosearch').show('fadeIn');  
+          });
 
 
       });
