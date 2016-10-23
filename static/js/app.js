@@ -22,7 +22,7 @@ showMySearches = function() {
 	  var html = "<table  class=\"striped\" ><thead><tr><th data-field=\"id\">From</th><th data-field=\"name\">To</th><th data-field=\"price\">Date</th><th data-field=\"price\">Search again</th><th></th></tr></thead><tbody>";
 	  for(var i = 0, l = searchedRoutes.length; i < l; i++) {
 		  console.log(searchedRoutes[i].from)
-    		html = html + "<tr><td>" + searchedRoutes[i].from + "</td><td>" + searchedRoutes[i].to + "</td><td>" + searchedRoutes[i].date + "</td><td><a  id=\"btnmod\" class=\"waves-effect waves-light btn\"><i class=\"material-icons center\">replay</i></a></td></tr>";
+    		html = html + "<tr><td>" + searchedRoutes[i].from + "</td><td>" + searchedRoutes[i].to + "</td><td>" + searchedRoutes[i].date + "</td><td><a href=" +searchedRoutes[i].url + "id=\"btnmod\" class=\"waves-effect waves-light btn\"><i class=\"material-icons center\">replay</i></a></td></tr>";
 			//html = html + "<a href=\"http://localhost:3001/\">asdf</a>"
 	  }
 	  document.getElementById("recentSearches").innerHTML = html + "</tbody></table>"; 
@@ -32,6 +32,11 @@ saveSearches = function() {
     var searchedRoutes = JSON.stringify(searches);
     localStorage.searchedRoutes = searchedRoutes;
 };
+
+searchAgain = function(obj) {
+	var url = obj.getAttribute("href");
+	getData(url);
+}
 
 getDataOnSubmit = function () {
 	var from = document.getElementById("from").value;
