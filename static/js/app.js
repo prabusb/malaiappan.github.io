@@ -12,14 +12,14 @@ document.getElementById("viewoffers").addEventListener('click', function() {
 
   
 document.getElementById("viewRecentSearch").addEventListener('click', function() {
-    // Open/show the add new city dialog
+    $('.button-collapse').sideNav('hide');
     showMySearches();
   });
   
 showMySearches = function() {
 	  var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
 	  console.log(searchedRoutes)
-	  var html = "<table  class=\"striped\" ><thead><tr><th data-field=\"id\">From</th><th data-field=\"name\">To</th><th data-field=\"price\">Date</th><th data-field=\"price\">Search again</th><th></th></tr></thead><tbody>";
+	  var html = "<table  class=\"striped\" ><thead><tr><th data-field=\"id\">From</th><th data-field=\"name\">To</th><th data-field=\"price\">Travel Date</th><th data-field=\"price\">Search again</th><th></th></tr></thead><tbody>";
 	  for(var i = 0, l = searchedRoutes.length; i < l; i++) {
 		  console.log(searchedRoutes[i].from)
     		html = html + "<tr><td>" + searchedRoutes[i].from + "</td><td>" + searchedRoutes[i].to + "</td><td>" + searchedRoutes[i].date + "</td><td><a href=" + searchedRoutes[i].url + " id=\"searchAgainButton\" class=\"waves-effect waves-light btn\"  onclick=\"searchAgain(this); return false;\"><i class=\"material-icons center\">replay</i></a></td></tr>";
