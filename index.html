@@ -106,11 +106,12 @@
           </tr>
         </tbody>
       </table>
-     <!-- <div>-->
-      <a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
+      </div> <!--Flight info-->
+        <div id="backtosearchdiv">
+          <a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
                 <i class="material-icons right">send</i>
               </a>
-      </div> <!--Flight info-->
+        </div>
       </main>
 
       
@@ -146,14 +147,15 @@
     }, 2000);
 
           $( "#viewoffers" ).click(function() {
-          $('#home').hide("fadeOut");
-          $('#flightinfo').show('fadeIn');
+            $('#home').hide("fadeOut");
+            $('#flightinfo').show('fadeIn');
+            $('#backtosearchdiv').show('fadeIn');  
           });
 
 
           $( "#backtosearch" ).click(function() {
-          $('#flightinfo').hide("fadeOut");
-          $('#home').show('fadeIn');
+            $('#flightinfo').hide("fadeOut");
+            $('#home').show('fadeIn');
           });
 
 
