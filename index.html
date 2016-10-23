@@ -25,7 +25,7 @@
 	    
   <ul id="slide-out" class="side-nav">
     <li><a class="subheader">Booking Menu</a></li>
-	   <li><a id="backtosearch" class="waves-effect">Book for new travel</a></li>
+	   <li><a id="newSearch" class="waves-effect">Book for new travel</a></li>
 	  <li><a id="viewRecentSearch" class="waves-effect">My recent searches</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Checkin Menu</a></li>
@@ -270,6 +270,12 @@
 	    $('#backtosearchdiv').hide('fadeOut');  
             $('#home').show('fadeIn');
           });
+	  
+	    $( "#newSearch" ).click(function() {
+		    $('.button-collapse').sideNav('hide');
+		    $("main").find("div:visible").hide();
+		    $('#home').show('fadeIn');
+	     });  
 
 	  $( "#viewRecentSearch" ).click(function() {
             $('#home').hide("fadeOut");
@@ -297,6 +303,7 @@
 	      
 	 $( "#boardingPass" ).click(function() { 
            $('.button-collapse').sideNav('hide');
+	   $("main").find("div:visible").hide();
             $('#confirmation').show('fadeIn');
          });
           
