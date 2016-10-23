@@ -212,7 +212,7 @@
           });
 
 	  $( "#searchAgainButton" ).click(function() {
-            searchAgain(this);
+            getData( $( "#searchAgainButton" ).attr("url")); 
 	    $('#flightinfo').show('fadeIn');
             $('#backtosearchdiv').show('fadeIn');
 	    return false;
