@@ -211,6 +211,12 @@
             $('#recentSearches').show('fadeIn');
           });
 
+	  $( "#searchAgainButton" ).click(function() {
+            searchAgain(this);
+	    $('#flightinfo').show('fadeIn');
+            $('#backtosearchdiv').show('fadeIn');
+	    return false;
+          });  
 
       });
 
