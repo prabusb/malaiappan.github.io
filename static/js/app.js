@@ -80,7 +80,7 @@ getData = function() {
 			 for(var i = 0, l = response.length; i < l; i++) {
 				html = html + "<tr><td>" + response[i].departureSation.stationCode + "</td><td>" + response[i].arrivalStation.stationCode + "</td><td>" + response[i].departureDate + "</td><td>" + response[i].departureTime + "</td><td>" + response[i].price.currency + " " + response[i].price.price + "</td><td> <a  id=\"btnmod\" class=\"waves-effect waves-light btn\">Book</a></td>";
 			 }
-			 document.getElementById("flightinfo").innerHTML = html + "</tbody></table><a class=\"waves-effect waves-light btn\" id=\"backtosearch\">Back to Search <i class=\"material-icons right\">send</i></a>"
+			 document.getElementById("flightinfo").innerHTML = html + "</tbody></table>"
 			 console.log("filled from network")
         }
       } else {
