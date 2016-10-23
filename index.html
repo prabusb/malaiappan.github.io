@@ -70,7 +70,7 @@
         </div>
               <a class="waves-effect waves-light btn" id="viewoffers"> View Offers <i class="material-icons right">send</i></a>
                  
-               <a class="waves-effect waves-light btn" id="viewRecentSearch" style="float:right;"> View Recent Searches
+               <a class="waves-effect waves-light btn" id="viewRecentSearch" style="float:right; display: none;"> View Recent Searches
                 <i class="material-icons right">send</i>
               </a> 
 
@@ -123,6 +123,7 @@
               <th data-field="id">From</th>
               <th data-field="name">To</th>
               <th data-field="price">Date</th>
+	      <th data-field="price">Search again</th>
               <th></th>
           </tr>
         </thead>
@@ -131,19 +132,21 @@
             <td>AMS</td>
             <td>MAD</td>
             <td>22 OCT</td>
-            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons right">replay</i></a></td>
+            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons center">replay</i></a></td>
           </tr>
             <tr>
             <td>AMS</td>
             <td>MAD</td>
             <td>22 OCT</td>
-            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons right">replay</i></a></td>
+            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons center">replay</i></a></td>
           </tr>
         </tbody>
       </table> 
-		<a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
+	<div id="backtosearchdiv" style="display: none;">
+          <a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
                 <i class="material-icons right">mode_edit</i>
               </a>
+        </div>
       </div> <!--recent searches-->
       </main>
 
@@ -182,7 +185,7 @@
 		  $('#flightinfo').show('fadeIn');
            	 $('#backtosearchdiv').show('fadeIn');  
 	  } 
-	 }else {
+	 } else {
           	 $('#home').show("fadeIn");
 	  }
         
@@ -199,6 +202,7 @@
             $('#flightinfo').hide("fadeOut");
 	    $('#backtosearchdiv').hide('fadeOut');  
             $('#home').show('fadeIn');
+	    $('#viewRecentSearch').show('fadeIn');  
           });
 
 	  $( "#viewRecentSearch" ).click(function() {
