@@ -36,6 +36,9 @@ saveSearches = function() {
 searchAgain = function(obj) {
 	var url = obj.getAttribute("href");
 	getData(url);
+	$('#recentSearches').hide('fadeOut');
+	 $('#flightinfo').show('fadeIn');
+         $('#backtosearchdiv').show('fadeIn');
 }
 
 getDataOnSubmit = function () {
