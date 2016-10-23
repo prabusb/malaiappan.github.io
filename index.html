@@ -138,17 +138,18 @@
          <script src="/static/js/app.js" async></script>
       <script type="text/javascript">
       $( document ).ready(function(){
-        $(".button-collapse").sideNav();
-         var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
+        $(".button-collapse").sideNav();	      
+        setTimeout(function() {
+         $('#preload-div').hide();
+	  var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
 	 console.log(searchedRoutes)
 	  if (searchedRoutes.length > 0) {
 		  getDataFromLocalStorage();
-		  return;
+		  $('#flightinfo').show('fadeIn');
+           	 $('#backtosearchdiv').show('fadeIn');  
+	  } else {
+          	 $('#home').show("fadeIn");
 	  }
-	      
-        setTimeout(function() {
-         $('#preload-div').hide();
-          $('#home').show("fadeIn");
         
         }, 2000);
 
@@ -161,6 +162,7 @@
 
           $( "#backtosearch" ).click(function() {
             $('#flightinfo').hide("fadeOut");
+	    $('#backtosearchdiv').hide('fadeOut');  
             $('#home').show('fadeIn');
           });
 
