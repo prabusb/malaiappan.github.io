@@ -43,7 +43,8 @@ searchAgain = function(obj) {
 
 bookTicket = function() {
 	$('#flightinfo').hide("fadeOut");
-          	$('#passengerinfo').show('fadeIn');
+	$('#backtosearchdiv').hide("fadeOut");
+        $('#passengerinfo').show('fadeIn');
 }
 
 getDataOnSubmit = function () {
