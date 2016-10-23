@@ -139,7 +139,8 @@
       <script type="text/javascript">
       $( document ).ready(function(){
       $(".button-collapse").sideNav();
-
+ var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
+	  console.log(searchedRoutes)
       setTimeout(function() {
        $('#preload-div').hide();
         $('#home').show("fadeIn");
