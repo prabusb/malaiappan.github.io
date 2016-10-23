@@ -266,7 +266,7 @@
             $('#recentSearches').show('fadeIn');
           });
 
-          $( "#bookButton" ).click(function() {
+          $("a:visible[id*='bookButton']").click(function() {
           	$('#flightinfo').hide("fadeOut");
           	$('#passengerinfo').show('fadeIn');
               //$('#modal1').openModal();
