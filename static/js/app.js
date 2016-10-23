@@ -13,6 +13,7 @@ document.getElementById("viewoffers").addEventListener('click', function() {
   
 document.getElementById("viewRecentSearch").addEventListener('click', function() {
     $('.button-collapse').sideNav('hide');
+	$("main").find("div:visible").hide();
     showMySearches();
   });
   
