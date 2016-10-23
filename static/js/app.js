@@ -7,8 +7,7 @@
   }
   
 document.getElementById("viewoffers").addEventListener('click', function() {
-    // Open/show the add new city dialog
-    getData();
+    getDataOnSubmit();
   });
   
   
