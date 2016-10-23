@@ -141,13 +141,15 @@
         $(".button-collapse").sideNav();	      
         setTimeout(function() {
          $('#preload-div').hide();
+	 if (localStorage.searchedRoutes !== undefined) {
 	  var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
-	 console.log(searchedRoutes)
+	  console.log(searchedRoutes)
 	  if (searchedRoutes.length > 0) {
 		  getDataFromLocalStorage();
 		  $('#flightinfo').show('fadeIn');
            	 $('#backtosearchdiv').show('fadeIn');  
-	  } else {
+	  } 
+	 }else {
           	 $('#home').show("fadeIn");
 	  }
         
