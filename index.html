@@ -60,7 +60,7 @@
          <p id="preloader-txt" class="pre-txt"> Welcome! <br/> You are now on the beta version of KLM Airline's Progressive web app</p>
 
          </div>
-      <div id="home" style="display: none;">
+      <div id="home" class="container" style="display: none;">
         
       <div class="row">
       
@@ -88,7 +88,7 @@
               </div>
         
       </div> <!-- Home End -->
-      <div id="flightinfo" style="display: none;">
+      <div id="flightinfo" class="container" style="display: none;">
         <!--<table  class="striped" > added for reference
         <thead>
           <tr>
@@ -127,7 +127,7 @@
               </a>
         </div>
 	      
-	<div id="recentSearches" style="display: none;">
+	<div id="recentSearches" class="container" style="display: none;">
         <table  class="striped" >
         <thead>
           <tr>
@@ -161,7 +161,7 @@
        
       </div> 
 	      
-	      <div id="passengerinfo" style="display:none">
+	      <div id="passengerinfo" class="container" style="display:none">
         <div class="row">
         <div class="input-field col s12">
           <input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Name</label>
@@ -185,7 +185,7 @@
                  
          </div>
              <!-- Modal Structure -->
-            <div id="modal1" class="modal bottom-sheet">
+            <div id="modal1" class="container" class="modal bottom-sheet">
             <div class="modal-content">
             <h4>Booking Confirmed!</h4>
             <p> Ticket Reference : X098YJ <br> Umar Kathap Abdul Abbas </p>
@@ -196,7 +196,7 @@
             </div>
         </div> <!-- End of Passgener Info -->
         
-        <div id="confirmation" style="display:none">
+        <div id="confirmation" class="container" style="display:none">
             
            <img class="responsive-img" src="images/Ebp.png">
             
@@ -273,7 +273,7 @@
 	  
 	    $( "#newSearch" ).click(function() {
 		    $('.button-collapse').sideNav('hide');
-		    $("main").find("div:visible").hide();
+		    $("main").find("div.container:visible").hide();
 		    $('#home').show('fadeIn');
 	     });  
 
@@ -303,7 +303,7 @@
 	      
 	 $( "#boardingPass" ).click(function() { 
            $('.button-collapse').sideNav('hide');
-	   $("main").find("div:visible").hide();
+	   $("main").find("div.container:visible").hide();
             $('#confirmation').show('fadeIn');
          });
           
