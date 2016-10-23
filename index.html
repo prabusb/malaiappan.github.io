@@ -149,6 +149,50 @@
               </a>
        
       </div> 
+	      
+	      <div id="passengerinfo" style="display:none">
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="icon_telephone" type="text" class="validate"> <label for="icon_telephone">Last Nmae</label>
+        </div>
+        
+        <div class="input-field col s12">
+          <input id="icon_telephone" type="text" class="validate"> <label for="icon_telephone">Date of Birth</label>
+        </div>
+        
+        <div class="input-field col s12">
+          <input id="icon_telephone" type="number" class="validate"> <label for="icon_telephone">Phone Number</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="icon_telephone" type="email" class="validate"> <label for="icon_telephone">Email</label>
+        </div>
+        </div>
+         <div style="float:right; padding-right:10px;"> <a class="waves-effect waves-light btn" href="#modal1" id="confirm">Confirm</a>
+                 
+         </div>
+             <!-- Modal Structure -->
+            <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+            <h4>Booking Confirmed!</h4>
+            <p> Ticket Reference : X098YJ <br> Umar Kathap Abdul Abbas </p>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="ebp">View Boarding Pass</a>
+            </div>
+            </div>
+        </div> <!-- End of Passgener Info -->
+        
+        <div id="confirmation" style="display:none">
+            
+           <img class="responsive-img" src="images/Ebp.png">
+            
+        <div  style="padding-top:10px; border-top:1px solid #ccc; height:1px;"></div> 
+          <div style="float:right; padding-right:10px; padding-top:10px;"> <a class="waves-effect waves-light btn" id="done">Done</a>
+            
+        </div><!-- Confimration -->
       </main>
 
       
@@ -157,7 +201,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Welcom!</h5>
+                <h5 class="white-text">Welcome!</h5>
                 <p class="grey-text text-lighten-4">You are now on the beta version of KLM Airline's Progressive web app
               </div>
            
@@ -175,7 +219,16 @@
          <script src="/static/js/app.js" async></script>
       <script type="text/javascript">
       $( document ).ready(function(){
-        $(".button-collapse").sideNav();	      
+	 $('.modal-trigger').leanModal();
+        $(".button-collapse").sideNav();
+	      
+	 var today = new Date(); var dd = today.getDate(); var mm = today.getMonth()+1; //January is 0! 
+            var yyyy = today.getFullYear(); 
+            if(dd<10) {    dd='0'+dd } 
+            if(mm<10) {    mm='0'+mm} 
+            today = mm+'/'+dd+'/'+yyyy;
+	 $("#date").val(today);     
+	      
         setTimeout(function() {
          $('#preload-div').hide();
 	 if (localStorage.searchedRoutes !== undefined) {
@@ -218,6 +271,34 @@
             $('#backtosearchdiv').show('fadeIn');
 	    return false;
           });  
+	      
+	      $('#home').show('fadeIn');
+               // $('#modal1').openModal();
+          });
+          
+        
+          $( "#btnmod" ).click(function() {
+          $('#flightinfo').hide("fadeOut");
+          $('#passengerinfo').show('fadeIn');
+              //$('#modal1').openModal();
+          });
+          
+           $( "#confirm" ).click(function() {
+          
+              $('#modal1').openModal();
+          });
+          
+         $( "#ebp" ).click(function() {
+              
+          $('#passengerinfo').hide("fadeOut");
+          $('#confirmation').show('fadeIn');
+          });
+          
+           $( "#done" ).click(function() {
+          $('#confirmation').hide("fadeOut");
+          $('#home').show('fadeIn');
+               $('.modal-trigger').closeModal();
+          });
 
       });
 
