@@ -15,6 +15,7 @@ document.getElementById("viewRecentSearch").addEventListener('click', function()
     $('.button-collapse').sideNav('hide');
 	$("main").find("div.container1:visible").hide();
     showMySearches();
+	$("#recentSearches").show('fadeIn');
   });
   
 showMySearches = function() {
