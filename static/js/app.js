@@ -47,7 +47,7 @@ getDataOnSubmit = function () {
 	var date = document.getElementById("date").value;
 	
 	var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-	var splittedDate = date.split("/")[1];
+	var splittedDate = date.split("/");
 	var url = 'https://flightmock.scalingo.io/flights/' + from + '/' + to + '/' + splittedDate[1] + monthNames[splittedDate[0]-1];
 	
 	searches.push({"from":from, "to":to, "date":date, "url":url})
