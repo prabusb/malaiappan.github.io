@@ -101,7 +101,7 @@ getData = function(url) {
 		  
 	  var html = "<table  class=\"striped\" ><thead><tr><th data-field=\"id\">From</th><th data-field=\"name\">To</th><th data-field=\"price\">Date</th><th data-field=\"price\">Time</th><th data-field=\"price\">Price</th><th></th></tr></thead><tbody>";
 	   for(var i = 0, l = response.length; i < l; i++) {
-		html = html + "<tr><td>" + response[i].departureSation.stationCode + "</td><td>" + response[i].arrivalStation.stationCode + "</td><td>" + response[i].departureDate + "</td><td>" + response[i].departureTime + "</td><td>" + response[i].price.currency + " " + response[i].price.price + "</td><td> <a  id=\"bookButton\" class=\"waves-effect waves-light btn\">Book</a></td>";
+		html = html + "<tr id=\"offer\"><td>" + response[i].departureSation.stationCode + "</td><td>" + response[i].arrivalStation.stationCode + "</td><td>" + response[i].departureDate + "</td><td>" + response[i].departureTime + "</td><td>" + response[i].price.currency + " " + response[i].price.price + "</td><td> <a  id=\"bookButton\" class=\"waves-effect waves-light btn\">Book</a></td>";
 	   }
 	   document.getElementById("flightinfo").innerHTML = html + "</tbody></table>"
 	   console.log("filled from network")
