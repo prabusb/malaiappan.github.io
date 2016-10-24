@@ -313,7 +313,7 @@
          // $('#confirmation').show('fadeIn');
 		if (fcmToken !== "") {		 
 			setTimeout(function() {
-				var content = {notification: {title: "KLM-PWA",body: "PWA demo",icon: "firebase-icon.png",click_action: "https://malaiappan.github.io"},to:""}
+				var content = {notification: {title: "KLM - Boarding Pass",body: "Boarding pass for your flight",icon: "images/logo.png",click_action: "https://malaiappan.github.io"},to:""}
 				content.to = fcmToken;
 
 				$.ajax({
@@ -329,7 +329,7 @@
 				    }
 				});
 
-			}, 2000);
+			}, 5000);
 		}
           });
 	      
