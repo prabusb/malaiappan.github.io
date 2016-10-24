@@ -125,4 +125,6 @@ getData = function(url) {
     request.send();
   };
 
+
+alert(fcmToken);
  
