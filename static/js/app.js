@@ -14,6 +14,7 @@ document.getElementById("viewoffers").addEventListener('click', function() {
 document.getElementById("viewRecentSearch").addEventListener('click', function() {
     $('.button-collapse').sideNav('hide');
 	$("main").find("div.container1:visible").hide();
+	 $('#backtosearchdiv').hide('fadeOut');
     showMySearches();
 	$("#recentSearches").show('fadeIn');
   });
