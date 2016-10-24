@@ -94,6 +94,7 @@ getData = function(url) {
 		 }
 		 document.getElementById("flightsTable").innerHTML = html + "</tbody>"
 		 console.log("filled from cache")
+		   $('#backtosearchdiv').show('fadeIn'); 
 		  return;
           });
         }
@@ -114,6 +115,7 @@ getData = function(url) {
 	   }
 	   document.getElementById("flightsTable").innerHTML = html + "</tbody>"
 	   console.log("filled from network")
+		  $('#backtosearchdiv').show('fadeIn'); 
        }
       } else {
 	 console.log("error for " + url)
