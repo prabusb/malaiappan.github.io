@@ -7,8 +7,16 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="css/font-awesome.min.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content='width=device-width, initial-scale=1.0, user-scalable=0'/>
+      <meta name="apple-mobile-web-app-title" content="KLM">
+      <link rel="icon" type="image/png" href="/images/icon175x175.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/images/icon175x175.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/images/icon175x175.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/images/icon175x175.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/images/icon175x175.png" sizes="32x32">
+
     </head>
 
     <body>
@@ -18,24 +26,24 @@
        <nav>
        <div class="nav-wrapper">
        <a href="#!"  class="brand-logo center"><img src="images/logo1.png" height="50px"/></a>
-       
+       <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa-lg" aria-hidden="true" style="color:#00a1de; padding-left:20px;"></i></a>
       </div>
       </nav>
       </header>
 	    
-  <ul id="slide-out" class="side-nav">
-    <li><a class="subheader">Booking Menu</a></li>
-	   <li><a id="newSearch" class="waves-effect">Book for new travel</a></li>
-	  <li><a id="viewRecentSearch" class="waves-effect">My recent searches</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Checkin Menu</a></li>
-	  <li><a id="myBookings" class="waves-effect">My Bookings</a></li>
-	   <li><a class="waves-effect">Checkin for flights</a></li>
-    <li><div class="divider"></div></li>
-     <li><a class="subheader">Ready for travel</a></li>
-	   <li><a id="boardingPass" class="waves-effect">Boarding passes</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="slide-out" class="side-nav">
+          <li> <a class=" subheader list-group-item" href="#">Booking Menu</a> </li>
+          <li><a id="newSearch" class="waves-effect list-group-item"><i class="fa fa-suitcase" aria-hidden="true"></i>Book for new travel</a></li>
+          <li><a id="viewRecentSearch" class="waves-effect list-group-item"><i class="fa fa-search" aria-hidden="true"></i>My recent searches</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Checkin Menu</a></li>
+          <li><a id="myBookings" class="waves-effect"><i class="fa fa-bookmark" aria-hidden="true"></i>My Bookings</a></li>
+          <li><a class="waves-effect"><i class="fa fa-check" aria-hidden="true"></i>Checkin for flights</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Ready for travel</a></li>
+          <li><a id="boardingPass" class="waves-effect"> <i class="fa fa-file" aria-hidden="true"></i>Boarding passes</a></li>
+      </ul>
+  
 	    
       <!-- Main Container Start-->
       <main>
@@ -49,7 +57,7 @@
                 <div class="circle"></div>
               </div><div class="circle-clipper right">
 
-                <div class="circle"></div>
+                <div class="circle"></div> 
               </div>
             </div>
 
@@ -156,8 +164,8 @@
      </div><!--recent searches-->
 	<div id="backtosearchdiv" style="display: none;">
           <a class="waves-effect waves-light btn" id="backtosearch">Back to Search 
-                <i class="material-icons right">mode_edit</i>
-              </a>
+                <i class="fa fa-backward" aria-hidden="true"></i>
+              </a >
        
       </div> 
 	      
