@@ -14,7 +14,7 @@ body {
 
 
 .btn, .btn-large{
-	background-color:#f19858;
+	background-color:red;
 }
 .btn:hover, .btn-large:hover{ background-color:#00a1de; }
 #preloader{ position: absolute; top:30%; left: 48%;}
