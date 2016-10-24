@@ -330,39 +330,7 @@
 
       </script>
 	      
-	      
-<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
-<script src="/static/js/push.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBrvwd831mxb6egGjQInMwztkMtObfjjmg",
-    authDomain: "pwa-test-72a20.firebaseapp.com",
-    databaseURL: "https://pwa-test-72a20.firebaseio.com",
-    storageBucket: "pwa-test-72a20.appspot.com",
-    messagingSenderId: "1031604326543"
-  };
-  firebase.initializeApp(config);
-
-// Retrieve Firebase Messaging object.
-const messaging = firebase.messaging();
-
-messaging.requestPermission()
-.then(function() {
-  console.log('Notification permission granted.');
-  return messaging.getToken()
-})
-.then(function(token) {
-	console.log(token);
-})
-.catch(function(err) {
-  console.log('Unable to get permission to notify. ', err);
-});
-	</script>
+	 <script src="/static/js/push.js"></script>     
 	      
     </body>
   </html>
