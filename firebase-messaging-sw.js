@@ -1,10 +1,9 @@
 
-
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+importScripts('https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js');
 
 firebase.initializeApp({
-  'messagingSenderId': 'YOUR-SENDER-ID'
+  'messagingSenderId': '1031604326543'
 });
 
 const messaging = firebase.messaging();
