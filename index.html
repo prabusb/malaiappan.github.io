@@ -236,15 +236,7 @@
             <a class="grey-text text-lighten-4 right" href="https://www.klm.com/home/nl/nl#/tab=hpTbMyKlm">KLM.COM</a>
             </div>
           </div>
-        </footer>
-	      
-	      <!-- for testing push notification -->
-	      <p class="custom__button">
-        <input id="turn-on-notification" type="checkbox" hidden="hidden" class="custom__input" data-checked="true">
-        <label for="turn-on-notification" class="custom__checkbox"></label>
-        <button class="no--select send-push">Send Push Notification</button>
-      </p>
-	      
+        </footer>    
 	      
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -344,6 +336,7 @@
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
 
 <script>
+	var fcmToken = "";
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBrvwd831mxb6egGjQInMwztkMtObfjjmg",
@@ -365,6 +358,7 @@ messaging.requestPermission()
 .then(function(token) {
 	console.log(token);
 	$(".custom__button").html(token);
+	fcmToken = token;
 })
 .catch(function(err) {
   console.log('Unable to get permission to notify. ', err);
