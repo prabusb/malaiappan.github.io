@@ -6,7 +6,7 @@
   var pushBtnElement = document.querySelector('.send-push');
 
   //API key & GCM Token
-  var apiKey = 'AIzaSyCjrU5SqotSg2ybDLK_7rMMt9Rv0dMusvY'; //replace with your own key
+  var apiKey = 'AIzaSyANQgbxQIyOASMdVU24T-wthqHRiAj8lmE'; //replace with your own key
   var gcmURL = 'https://android.googleapis.com/gcm/send';
 
   //To check `push notification` is supported
