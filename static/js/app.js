@@ -126,5 +126,4 @@ getData = function(url) {
   };
 
 
-alert(fcmToken);
  
