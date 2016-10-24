@@ -14,7 +14,17 @@ body {
 
 
 .btn, .btn-large{
-	background-color:#f19858;
+	background:#f19858;
+    
+    background: -webkit-linear-gradient(#e77b2f, #e67732); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e77b2f, #e67732);/* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e77b2f, #e67732); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e77b2f, #e67732); /* Standard syntax */
+}
+#backtosearchdiv .btn, .btn-large{
+	background:#00a1de;
+    
+   
 }
 .btn:hover, .btn-large:hover{ background-color:#00a1de; }
 #preloader{ position: absolute; top:30%; left: 48%;}
@@ -25,7 +35,7 @@ body {
 
     padding: 0 1rem; height:25px; line-height:25px;
 }
-
+.btn, .btn-large, .btn-flat{ padding: 0 1rem}
 nav .button-collapse i {
 font-size:2.0rem;
 }
