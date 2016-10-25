@@ -219,7 +219,7 @@
 	      
 	 <div id="boardingPasses" class="container1" style="display: none;">
         <h5 style="border-left:5px solid #00a1de; padding-left:5px;">Boarding Passes for your next flights </h5>
-        <table id="bpTable" class="striped" style="display: none;">
+        <table id="bpTable" class="striped">
        <thead> 
           <tr>
               <th data-field="id">From</th>
@@ -385,7 +385,7 @@
 	 });
 	      
 	$( "#viewBP" ).click(function() {    
-		var dataImage = JSON.parse(localStorage.getItem('BP:AMS-CDG'));
+		var dataImage = localStorage.getItem('BP:AMS-CDG');
 		bannerImg = document.getElementById('newEbp');
 		bannerImg.src = "data:image/png;base64," + dataImage;  
 		
