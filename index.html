@@ -213,9 +213,31 @@
            <img id="newEbp" class="responsive-img" src="images/Ebp.png" data-src="images/Ebp.png">
             
         <div  style="padding-top:10px; border-top:1px solid #ccc; height:1px;"></div> 
-          <div style="float:right; padding-right:10px; padding-top:10px;"> <a class="waves-effect waves-light btn" id="done">Done</a>
+          <div style="float:right; padding-right:10px; padding-top:10px;"> <a class="waves-effect waves-light btn" id="done">Save</a>
 		</div>   
         </div><!-- Confimration -->
+	      
+	 <div id="boardingPasses" class="container1" style="display: none;">
+        <h5 style="border-left:5px solid #00a1de; padding-left:5px;">Boarding Passes for your next flights </h5>
+        <table id="bpTable" class="striped" >
+       <thead> 
+          <tr>
+              <th data-field="id">From</th>
+              <th data-field="name">To</th>
+              <th data-field="price">Date</th>
+	      <th data-field="price">Boarding passes</th>
+              <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AMS</td>
+            <td>CDG</td>
+            <td>22 OCT</td>
+            <td><a  id="btnmod" class="waves-effect waves-light btn"><i class="material-icons center">View</i></a></td>
+        </tbody>
+      </table> 
+     </div><!--recent searches-->
 		
 	<div id="modal2" class="modal bottom-sheet">
             <div class="modal-content">
@@ -251,7 +273,6 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
          <script src="/static/js/app.js" async></script>
-	     <script src="/static/js/push.js"></script>
       <script type="text/javascript">
       $( document ).ready(function(){
 	 $('.modal-trigger').leanModal();
@@ -303,15 +324,7 @@
 	  $( "#viewRecentSearch" ).click(function() {
             $('#home').hide("fadeOut");
             $('#recentSearches').show('fadeIn');
-          });
-
-          $("tr").on("click", "a#bookButton_0", function() {
-          	$('#flightinfo').hide("fadeOut");
-          	$('#passengerinfo').show('fadeIn');
-              //$('#modal1').openModal();
-          });
-	      
-	      $("#offer").click(function() { alert("hi") });
+          });	     
           
            $( "#confirm" ).click(function() {
           
@@ -357,12 +370,27 @@
          });
           
          $( "#done" ).click(function() {
-          $('#confirmation').hide("fadeOut");
-          $('#home').show('fadeIn');
-          $('.modal-trigger').closeModal();
-        });
+		$('.modal-trigger').closeModal();
+		bannerImage = document.getElementById('newEbp');
+		imgData = getBase64Image(bannerImage);
 
-	       $('newEbp').imageCaching();
+		var data = JSON.stringify({"from":"AMS","to":"CDG","bp":imgData});
+		localStorage.setItem("BP:AMS-CDG", imgData);
+        });
+	      
+	function getBase64Image(img) {
+	    var canvas = document.createElement("canvas");
+	    canvas.width = img.width;
+	    canvas.height = img.height;
+
+	    var ctx = canvas.getContext("2d");
+	    ctx.drawImage(img, 0, 0);
+
+	    var dataURL = canvas.toDataURL("image/png");
+
+	    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+	}
+
       });
 	      
 
