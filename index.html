@@ -234,7 +234,7 @@
             <td>AMS</td>
             <td>CDG</td>
             <td>22 OCT</td>
-            <td><a  id="viewBP" class="waves-effect waves-light btn"><i class="material-icons center">View</i></a></td>
+            <td><a  id="viewBP" class="waves-effect waves-light btn">View</a></td>
         </tbody>
       </table> 
      </div><!--recent searches-->
@@ -331,14 +331,14 @@
               $('#modal1').openModal();
           });
 	
-	      // shows ebp from click in modal
+	      // shows ebp from click in bp available modal
 	  $("#getEbp").click(function() {
 		  $("main").find("div.container1:visible").hide();
 	       $('#passengerinfo').hide("fadeOut");
          	 $('#confirmation').show('fadeIn');
 	  });
           
-	      //booking confirmation triggers notification
+	      //booking confirmation modal click on automatic checkin triggers notification
          $( "#ebp" ).click(function() {
               
          // $('#passengerinfo').hide("fadeOut");
@@ -386,9 +386,11 @@
 	      
 	$( "#viewBP" ).click(function() {    
 		var dataImage = JSON.parse(localStorage.getItem('"BP:AMS-CDG'));
-		console.log(dataImage.from);
 		bannerImg = document.getElementById('newEbp');
 		bannerImg.src = "data:image/png;base64," + dataImage;  
+		
+		 $("main").find("div.container1:visible").hide();
+         	 $('#confirmation').show('fadeIn');
 	});
 		 
 	function getBase64Image(img) {
