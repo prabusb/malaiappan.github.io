@@ -357,32 +357,39 @@
 
 <script>
 	var fcmToken = "";
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBrvwd831mxb6egGjQInMwztkMtObfjjmg",
-    authDomain: "pwa-test-72a20.firebaseapp.com",
-    databaseURL: "https://pwa-test-72a20.firebaseio.com",
-    storageBucket: "pwa-test-72a20.appspot.com",
-    messagingSenderId: "1031604326543"
-  };
-  firebase.initializeApp(config);
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBrvwd831mxb6egGjQInMwztkMtObfjjmg",
+		authDomain: "pwa-test-72a20.firebaseapp.com",
+		databaseURL: "https://pwa-test-72a20.firebaseio.com",
+		storageBucket: "pwa-test-72a20.appspot.com",
+		messagingSenderId: "1031604326543"
+	};
+	
+	firebase.initializeApp(config);
 
-// Retrieve Firebase Messaging object.
-const messaging = firebase.messaging();
+	// Retrieve Firebase Messaging object.
+	const messaging = firebase.messaging();
 
-messaging.requestPermission()
-.then(function() {
-  console.log('Notification permission granted.');
-  return messaging.getToken()
-})
-.then(function(token) {
-	console.log(token);
-	$(".custom__button").html(token);
-	fcmToken = token;
-})
-.catch(function(err) {
-  console.log('Unable to get permission to notify. ', err);
-});
+	messaging.requestPermission()
+	.then(function() {
+		console.log('Notification permission granted.');
+		return messaging.getToken()
+	})
+	.then(function(token) {
+		console.log(token);
+		$(".custom__button").html(token);
+		fcmToken = token;
+	})
+	.catch(function(err) {
+		console.log('Unable to get permission to notify. ', err);
+	});
+	
+	messaging.onMessage(function(payload) {
+		console.log("Message received. ", payload);
+		console.log("in app);
+		console.log((payload);
+	});
 	</script>
 	      
     </body>
