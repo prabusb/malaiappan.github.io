@@ -216,6 +216,16 @@
           <div style="float:right; padding-right:10px; padding-top:10px;"> <a class="waves-effect waves-light btn" id="done">Done</a>
             
         </div><!-- Confimration -->
+		
+	<div id="modal2" class="modal bottom-sheet">
+            <div class="modal-content">
+            <h4>Boarding pass for your flight available. </h4>
+	    <p> Get ready to flight with KLM!!</p>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="getEbp">Click here to see your Boarding Pass</a>
+            </div>
+        </div>
       </main>
 
       
@@ -306,6 +316,11 @@
           
               $('#modal1').openModal();
           });
+	
+	  $("#getEbp").click(function() {
+	       $('#passengerinfo').hide("fadeOut");
+         	 $('#confirmation').show('fadeIn');
+	  });
           
          $( "#ebp" ).click(function() {
               
@@ -387,8 +402,7 @@
 	
 	messaging.onMessage(function(payload) {
 		console.log("Message received. ", payload);
-		console.log("in app");
-		console.log(payload);
+		$('#modal2').openModal();
 	});
 	</script>
 	      
