@@ -291,7 +291,7 @@
 			$("main").find("div.container1:visible").hide();
 			$('#boardingPasses').show('fadeIn');
 		}
-		if (localStorage.searchedRoutes !== undefined) {
+		else if (localStorage.searchedRoutes !== undefined) {
 			var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
 			console.log(searchedRoutes)
 			if (searchedRoutes.length > 0) {
@@ -312,6 +312,7 @@
 
           $( "#backtosearch" ).click(function() {
             $('#flightinfo').hide("fadeOut");
+		  $("main").find("div.container1:visible").hide();
 	    $('#backtosearchdiv').hide('fadeOut');  
             $('#home').show('fadeIn');
           });
