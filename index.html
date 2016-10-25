@@ -285,21 +285,24 @@
             today = mm+'/'+dd+'/'+yyyy;
 	 $("#date").val(today);     
 	      
-        setTimeout(function() {
-         $('#preload-div').hide();
-	 if (localStorage.searchedRoutes !== undefined) {
-	  var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
-	  console.log(searchedRoutes)
-	  if (searchedRoutes.length > 0) {
-		  getDataFromLocalStorage();
-		  $('#flightinfo').show('fadeIn');
-           	 $('#backtosearchdiv').show('fadeIn');  
-	  } 
-	 } else {
-          	 $('#home').show("fadeIn");
-	  }
-        
-        }, 2000);
+	setTimeout(function() {
+		$('#preload-div').hide();
+		if (localStorage.bookingDone !== undefined) {
+			$("main").find("div.container1:visible").hide();
+			$('#boardingPasses').show('fadeIn');
+		}
+		if (localStorage.searchedRoutes !== undefined) {
+			var searchedRoutes = JSON.parse(localStorage.searchedRoutes)
+			console.log(searchedRoutes)
+			if (searchedRoutes.length > 0) {
+			getDataFromLocalStorage();
+			$('#flightinfo').show('fadeIn');
+			$('#backtosearchdiv').show('fadeIn');  
+		} 
+		} else {
+			$('#home').show("fadeIn");
+		}
+	}, 2000);
 
           $( "#viewoffers" ).click(function() {
             $('#home').hide("fadeOut");
@@ -327,7 +330,7 @@
           });	     
           
            $( "#confirm" ).click(function() {
-          
+          	localStorage.bookingDone = true;
               $('#modal1').openModal();
           });
 	
@@ -376,16 +379,18 @@
 		$('.modal-trigger').closeModal();
 		bannerImage = document.getElementById('newEbp');
 		imgData = getBase64Image(bannerImage);
-
-		var data = JSON.stringify({"from":"AMS","to":"CDG","bp":imgData});
-		localStorage.setItem("BP:AMS-CDG", imgData);
+		localStorage.setItem("BP_AMS_CDG", imgData);
 		 
 		$("main").find("div.container1:visible").hide();
 		$('#boardingPasses').show('fadeIn');
 	 });
 	      
 	$( "#viewBP" ).click(function() {    
-		var dataImage = localStorage.getItem('BP:AMS-CDG');
+		var dataImage = localStorage.getItem('BP_AMS_CDG');
+		if (dataImage === null) { //when app is in background - need to get image in local storage
+			bannerImage = document.getElementById('newEbp');
+			dataImage = getBase64Image(bannerImage);
+		} // when app is in foreground, ebp is added to local storage - by clicking "#done"
 		bannerImg = document.getElementById('newEbp');
 		bannerImg.src = "data:image/png;base64," + dataImage;  
 		
